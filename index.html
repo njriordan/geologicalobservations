@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+		<title>Geological Observations</title>
+		<link rel="stylesheet" href="https://js.arcgis.com/3.17/dijit/themes/claro/claro.css">
+		<link rel="stylesheet" href="https://js.arcgis.com/3.17/esri/css/esri.css">
+		<link rel="stylesheet" href="css/style.css">
+		<script>
+			var dojoConfig = {
+				locale: 'en-gb',
+				paths: { bgs: location.pathname.replace(/\/[^/]+$/, "") + "/js" }
+			};
+		</script>
+		<script src="https://js.arcgis.com/3.17/"></script>
+		<script src="js/map.js"></script>
+	</head>
+
+	<body class="claro">
+		<div id="infopanel">
+			<h3>Geological Observations</h3>
+			<div id="infopanel-content">
+				<h5>
+					<p>This map contains a number of geological observations, presented as Feature Services hosted on ArcGIS Online.</p>
+					<p>The addition of a WMS layer provided by the BGS allows the observations to be shown within their geological context.
+					This WMS layer is available at scales of 1:100,000 and below.</p>
+					<p>The GetFeatureInfo capability of the WMS layer is exploited to construct popup windows that contain useful information.</p>
+					<p>Operational layers are listed below. The WMS layer can sometimes be less responsive than the Feature Services. 
+					Try panning the map or refreshing the page if problems occur.</p>
+				</h5>
+			</div>			
+			<div id="layerlist"></div>	
+
+		</div>
+		<div id="search"></div>
+		<div>
+			<a class="sourcelink" href="https://github.com/njriordan/geologicalobservations" alt="View Source on GitHub">View on GitHub</a>
+		</div>
+		<div id="map" class="map"></div>
+	</body>
+
+</html>

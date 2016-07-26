@@ -1,0 +1,109 @@
+html,
+body,
+
+#map {
+	padding: 0;
+	margin: 0;
+	height: 100%;
+}
+
+.popup-image {
+	display: block;
+	width: 80%;
+	margin: auto;	
+}
+
+.esriLayer{
+    background-color: #fff;
+}
+.esriLayerList .esriList{
+	border-top:none;
+}
+.esriLayerList .esriTitle {
+    background-color: #fff;
+    border-bottom:none;
+}	
+
+#infopanel {
+	background: #fff;
+	color: #444;
+	position: absolute;
+	font-family: arial;
+	max-height: 85%;
+	right: 35px;
+	padding: 10px;
+	top: 25px;
+	width: 300px;
+	border: 1px solid #57585A;
+	border-radius: 6px;
+	overflow: auto;
+	z-index: 40;		 
+}
+
+#search {
+	display: block;
+	position: absolute;
+	z-index: 2;
+	top: 20px;
+	left: 74px;
+}
+
+h3 {
+	text-align: center;
+}
+
+h5 {
+	text-align: justify;
+}
+
+a.sourcelink{
+    text-decoration: none;
+	color: #444;
+	font-family: arial;
+	position: absolute;
+	font-size: 11px;
+	font-weight: bold;
+	text-decoration: none;
+	z-index: 4;
+	bottom: 4px;
+	left: 4px;
+}
+
+/* Apply some specific styling for mobile devices */
+@media screen and (max-width: 800px) {
+	h3 {
+		font-size: 0.7em;
+		-webkit-margin-before:0.5em;
+		-webkit-margin-after: 0.5em;
+	} 
+
+	#infopanel-content{
+		display: none;
+	}
+	  
+	#map_zoom_slider {
+		visibility: hidden;
+	  }
+	  
+	#search {
+		top: 10px;
+		left: 10px;
+	}
+
+	#infopanel {
+		top: 10px;
+		right: 10px;
+		width: 215px;
+		padding: 2px;
+	  }
+
+}
+
+/* Remove some elements for small screen mobile display */
+@media screen and (max-width: 650px) {
+	  #infopanel {
+		visibility: hidden;
+	  }
+}
+
+
