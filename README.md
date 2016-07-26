@@ -5,3 +5,6 @@ The addition of a WMS layer allows these observations to be shown within their g
 The GetFeatureInfo capability of the WMS layer is exploited to populate popups with useful information.
 
 [View the live demo](http://njrgeoapp.azurewebsites.net/geoapp/)
+
+
+Proxy sourced from [Esri](https://github.com/Esri/resource-proxy/)
