@@ -56,15 +56,15 @@ define([
 			var name = fields.getAttribute("LEX_RCS_D");
 			var maxAge = fields.getAttribute("MAX_TIME_D");
 			var minAge = fields.getAttribute("MIN_TIME_D");
-			var broadDesc = fields.getAttribute("BROAD_D").toUpperCase();
 			var settingDesc = fields.getAttribute("SETTING_D").toUpperCase();
-
+			var environDesc = fields.getAttribute("ENVIRONMENT_D");
+			
 			// Construct infoWindow content.
 			var content = '<b>' + name + '</b><br /><br />' +
 						  '<b>Max Age: </b>' + maxAge + '<br />' +
 						  '<b>Min Age: </b>' + minAge + '<br /><br />' +
-						  '<b>Broad Description: </b>' + broadDesc + '<br />' +
-						  '<b>Depositional Setting: </b>' + settingDesc + '<br />';
+						  '<b>Depositional Setting: </b>' + settingDesc + '<br /><br />' +
+						  environDesc;
 
 			// Set content and display infoWindow.
 			this.map.infoWindow.setContent(content);
