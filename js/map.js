@@ -60,7 +60,6 @@ require([
 	// Add a WMS layer from the BGS.
 	var wmsLayer = new WMSLayer("https://map.bgs.ac.uk/arcgis/services/BGS_Detailed_Geology/MapServer/WMSServer", {
 		id: "WMS Geological Data",
-		format: "jpg",
 		opacity: 0.7,
 		visible: false});
 	
