@@ -36,7 +36,7 @@ require([
 	esriConfig.defaults.io.alwaysUseProxy = false;			
 	
 	// The map is instantiated. 
-	map = new Map("map", {
+	var map = new Map("map", {
 		center: [-1.076, 52.874],
 		zoom: 15,
 		basemap: "osm",
@@ -58,14 +58,14 @@ require([
 		outFields: ['*'], observationType: 'borehole'});
 	
 	// Add a WMS layer from the BGS.
-	wmsLayer = new WMSLayer("https://map.bgs.ac.uk/arcgis/services/BGS_Detailed_Geology/MapServer/WMSServer", {
+	var wmsLayer = new WMSLayer("https://map.bgs.ac.uk/arcgis/services/BGS_Detailed_Geology/MapServer/WMSServer", {
 		id: "WMS Geological Data",
 		format: "jpg",
 		opacity: 0.7,
 		visible: false});
 	
 	// Popups are added to the WMS layer. The WMSInfoWindow class exploits the WMS GetFeatureInfo capability.
-	wmsPopup = new WMSInfoWindow({map: map, wmsLayer: wmsLayer});
+	var wmsPopup = new WMSInfoWindow({map: map, wmsLayer: wmsLayer});
 	
 	// Show the WMS popup on map click - if no observation popups are open and >0 WMS sublayers are active.
 	map.on('click', function(evt){
