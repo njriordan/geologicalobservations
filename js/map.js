@@ -29,7 +29,7 @@ require([
 	Scalebar,
 	BGSObservationLayer,
 	WMSInfoWindow,	
-	parser,
+	parser
 ) {
 	parser.parse();
 	
