@@ -13,7 +13,8 @@ require([
 	"esri/config",	
 	"esri/layers/WMSLayer",	
 	"esri/dijit/LayerList",
-	"esri/dijit/Search",	
+	"esri/dijit/Search",
+	"esri/dijit/Scalebar",	
 	"bgs/BGSObservationLayer",	
 	"bgs/WMSInfoWindow",	
 	"dojo/parser",
@@ -24,7 +25,8 @@ require([
 	esriConfig,	
 	WMSLayer,	
 	LayerList,
-	Search,	
+	Search,
+	Scalebar,
 	BGSObservationLayer,
 	WMSInfoWindow,	
 	parser
@@ -32,7 +34,7 @@ require([
 	parser.parse();
 	
 	// A proxy is used to allow cross-origin requests.
-	esriConfig.defaults.io.proxyUrl = "proxy/proxy.ashx"
+	esriConfig.defaults.io.proxyUrl = "/proxy/proxy.ashx"
 	esriConfig.defaults.io.alwaysUseProxy = false;			
 	
 	// The map is instantiated. 
@@ -92,5 +94,11 @@ require([
 		map: map}, 
 		"search");
 	search.startup();
-
+	
+	// Add a scalebar
+	var scalebar = new Scalebar({
+		map: map,
+		scalebarStyle: "ruler",
+		scalebarUnit: "metric",
+	});
 });
