@@ -29,7 +29,7 @@ require([
 	Scalebar,
 	BGSObservationLayer,
 	WMSInfoWindow,	
-	parser
+	parser,
 ) {
 	parser.parse();
 	
@@ -41,8 +41,7 @@ require([
 	var map = new Map("map", {
 		center: [-1.076, 52.874],
 		zoom: 15,
-		basemap: "osm",
-		logo: false
+		basemap: "osm"
 	});
 	
 	// The observation layers are created. The BGSObservationLayer class extends the FeatureLayer class and takes care of formatting infoWindows
@@ -63,7 +62,7 @@ require([
 	var wmsLayer = new WMSLayer("https://map.bgs.ac.uk/arcgis/services/BGS_Detailed_Geology/MapServer/WMSServer", {
 		id: "WMS Geological Data",
 		opacity: 0.7,
-		visible: false});
+		copyright: "Contains British Geological Survey materials copyright NERC 2016"});	
 	
 	// Popups are added to the WMS layer. The WMSInfoWindow class exploits the WMS GetFeatureInfo capability.
 	var wmsPopup = new WMSInfoWindow({map: map, wmsLayer: wmsLayer});
@@ -74,18 +73,20 @@ require([
 		wmsPopup.showInfoWindow(evt);
 		}});		
 
-	// Add layers to the layer list.  
+	// When layers are loaded into map, create the layer list.
 	map.on("layers-add-result", function (evt) {
+				
+		// Add layers to the layer list.
 		var layerList = new LayerList ({
 			map: map,
 			layers: evt.layers,
 			showSubLayers: true,
 			showLegend: true
 			}, "layerlist");
-		layerList.startup();    
+		layerList.startup();				 
 		}  							
 	);
-
+	
 	// Add the layers to the map.
 	map.addLayers([wmsLayer, bgsRocks, bgsMeasurements, bgsFossils, bgsBoreholes]);
 	
@@ -101,4 +102,5 @@ require([
 		scalebarStyle: "ruler",
 		scalebarUnit: "metric",
 	});
+	
 });
