@@ -34,8 +34,7 @@ require([
 	parser.parse();
 	
 	// A proxy is used to allow cross-origin requests.
-	esriConfig.defaults.io.proxyUrl = "/proxy/proxy.ashx"
-	esriConfig.defaults.io.alwaysUseProxy = false;			
+	esriConfig.defaults.io.corsEnabledServers.push('map.bgs.ac.uk');		
 	
 	// The map is instantiated. 
 	var map = new Map("map", {
